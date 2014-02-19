@@ -30,17 +30,10 @@ function handleAuthResult(authResult) {
     if (authResult) {
         // Auth was successful; hide the things related to prompting for auth and show the things
         // that should be visible after auth succeeds.
-        window.location = "dashboard.html";
     } else {
         // Make the #login-link clickable, and attempt a non-immediate OAuth 2 client flow.
         // The current function will be called when that flow is complete.
-        $('#login-link').click(function() {
-            gapi.auth.authorize({
-                client_id: OAUTH2_CLIENT_ID,
-                scope: OAUTH2_SCOPES,
-                immediate: false
-            }, handleAuthResult);
-        });
+        window.location = "index.html";
     }
 }
 
